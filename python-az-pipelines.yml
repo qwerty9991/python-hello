@@ -32,5 +32,4 @@ stages:
       inputs:
         buildType: 'current'
         downloadType: 'specific'
-        itemPattern: 'drop/**'
         downloadPath: '$(System.ArtifactsDirectory)'
