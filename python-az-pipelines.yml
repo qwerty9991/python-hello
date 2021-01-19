@@ -31,7 +31,6 @@ stages:
     - task: DownloadBuildArtifacts@0
       inputs:
         buildType: 'current'
-        downloadType: 'single'
-        artifactName: 'python-hello'
+        downloadType: 'specific'
         itemPattern: 'drop/**'
         downloadPath: '$(System.ArtifactsDirectory)'
