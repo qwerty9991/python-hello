@@ -28,8 +28,15 @@ stages:
         tags: |
           $(tag)
 
-    - task: DownloadBuildArtifacts@0
-      inputs:
-        buildType: 'current'
-        downloadType: 'specific'
-        downloadPath: '$(System.ArtifactsDirectory)'
+- stage: Publish
+  displayName: Publish
+  jobs:
+    - job: Publish
+      displayName: Publish
+      steps:
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop'
+          publishLocation: 'Container'
+      
